@@ -1,11 +1,12 @@
 import React from 'react';
 
-import speaker from './speaker.png';
+import { Speaker } from '../components/speaker/speaker';
+
 
 export default () => (
   <section>
 
-    <img src={speaker}/>
+    <Speaker/>
 
     <p>
       Hi there!
@@ -40,3 +41,4 @@ export default () => (
 
   </section>
 );
+

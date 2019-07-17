@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { articles } from './articles';
-import { talks } from './talks';
+import { articles } from '../components/contributions/articles';
+import { talks } from '../components/contributions/talks';
 
 
 const Contribution = ({ contribution }) => (
