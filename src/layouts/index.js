@@ -1,6 +1,8 @@
 import React from 'react';
 
-import { rhythm } from '../utils/typography';
+import './global.css';
+
+import layoutStyles from './index.module.css';
 import { Header } from './header';
 
 export default (props) => {
@@ -56,16 +58,11 @@ export default (props) => {
   //   )
   // }
   return (
-    <main
-      style={{
-        marginLeft: 'auto',
-        marginRight: 'auto',
-        maxWidth: rhythm(24),
-        padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
-      }}
-    >
+    <div className={layoutStyles.container}>
       <Header/>
-      {children()}
-    </main>
+      <main className={layoutStyles.main}>
+        {children()}
+      </main>
+    </div>
   );
 }

@@ -1,11 +1,12 @@
 import React from 'react';
 
+import headerStyles from './header.module.css';
 import { Menu } from './menu';
 
 
 export const Header = () => {
   return (
-    <header>
+    <header className={headerStyles.header}>
       <Menu/>
     </header>
   );
