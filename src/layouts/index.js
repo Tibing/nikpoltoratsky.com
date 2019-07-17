@@ -1,75 +1,71 @@
-import React from 'react'
-import Link from 'gatsby-link'
+import React from 'react';
 
-import { rhythm, scale } from '../utils/typography'
+import { rhythm } from '../utils/typography';
+import { Header } from './header';
 
-class Template extends React.Component {
-  render() {
-    const { location, children } = this.props
-    let header
+export default (props) => {
+  const { location, children } = props;
+  let header;
 
-    let rootPath = `/`
-    if (typeof __PREFIX_PATHS__ !== `undefined` && __PREFIX_PATHS__) {
-      rootPath = __PATH_PREFIX__ + `/`
-    }
-
-    if (location.pathname === rootPath) {
-      header = (
-        <h1
-          style={{
-            ...scale(1.5),
-            marginBottom: rhythm(1.5),
-            marginTop: 0,
-          }}
-        >
-          <Link
-            style={{
-              boxShadow: 'none',
-              textDecoration: 'none',
-              color: 'inherit',
-            }}
-            to={'/'}
-          >
-            Gatsby Starter Blog
-          </Link>
-        </h1>
-      )
-    } else {
-      header = (
-        <h3
-          style={{
-            fontFamily: 'Montserrat, sans-serif',
-            marginTop: 0,
-            marginBottom: rhythm(-1),
-          }}
-        >
-          <Link
-            style={{
-              boxShadow: 'none',
-              textDecoration: 'none',
-              color: 'inherit',
-            }}
-            to={'/'}
-          >
-            Gatsby Starter Blog
-          </Link>
-        </h3>
-      )
-    }
-    return (
-      <div
-        style={{
-          marginLeft: 'auto',
-          marginRight: 'auto',
-          maxWidth: rhythm(24),
-          padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
-        }}
-      >
-        {header}
-        {children()}
-      </div>
-    )
+  let rootPath = `/`;
+  if (typeof __PREFIX_PATHS__ !== `undefined` && __PREFIX_PATHS__) {
+    rootPath = __PATH_PREFIX__ + `/`;
   }
-}
 
-export default Template
+  // if (location.pathname === rootPath) {
+  //   header = (
+  //     <h1
+  //       style={{
+  //         ...scale(1.5),
+  //         marginBottom: rhythm(1.5),
+  //         marginTop: 0,
+  //       }}
+  //     >
+  //       <Link
+  //         style={{
+  //           boxShadow: 'none',
+  //           textDecoration: 'none',
+  //           color: 'inherit',
+  //         }}
+  //         to={'/'}
+  //       >
+  //         Gatsby Starter Blog
+  //       </Link>
+  //     </h1>
+  //   )
+  // } else {
+  //   header = (
+  //     <h3
+  //       style={{
+  //         fontFamily: 'Montserrat, sans-serif',
+  //         marginTop: 0,
+  //         marginBottom: rhythm(-1),
+  //       }}
+  //     >
+  //       <Link
+  //         style={{
+  //           boxShadow: 'none',
+  //           textDecoration: 'none',
+  //           color: 'inherit',
+  //         }}
+  //         to={'/'}
+  //       >
+  //         Gatsby Starter Blog
+  //       </Link>
+  //     </h3>
+  //   )
+  // }
+  return (
+    <main
+      style={{
+        marginLeft: 'auto',
+        marginRight: 'auto',
+        maxWidth: rhythm(24),
+        padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
+      }}
+    >
+      <Header/>
+      {children()}
+    </main>
+  );
+}
